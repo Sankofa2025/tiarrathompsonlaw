@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Tiarra Thompson, Esq. | Partner Attorney at Sankofa Law Group | South Holland, IL</title>
-  <meta
-    name="description"
-    content="Tiarra Thompson is a Partner Attorney at Sankofa Law Group in South Holland, IL, providing relentless advocacy and strategic representation in criminal defense and civil litigation. Call 708-270-4954."
-  >
+  <meta name="description" content="Tiarra Thompson is a Partner Attorney at Sankofa Law Group in South Holland, IL, providing relentless advocacy and strategic representation in criminal defense, civil litigation, and family law. Call 708-270-4954.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0B1B2E">
+  <meta name="author" content="Tiarra Thompson, Esq.">
+  <meta name="geo.region" content="US-IL">
+  <meta name="geo.placename" content="South Holland">
   <link rel="canonical" href="https://www.sankofalawgroup.com/tiarra-thompson/">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -21,7 +21,7 @@
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Sankofa Law Group">
   <meta property="og:title" content="Tiarra Thompson, Esq. | Partner Attorney">
-  <meta property="og:description" content="Relentless advocacy and strategic representation in criminal defense and civil litigation at Sankofa Law Group.">
+  <meta property="og:description" content="Relentless advocacy and strategic representation in criminal defense, civil litigation, and family law at Sankofa Law Group.">
   <meta property="og:url" content="https://www.sankofalawgroup.com/tiarra-thompson/">
   <meta property="og:image" content="https://www.sankofalawgroup.com/images/tiarra-thompson-og.jpg">
 
@@ -39,10 +39,20 @@
     "jobTitle": "Partner Attorney",
     "telephone": "+1-708-270-4954",
     "email": "tiarra@tiarrathompsonlaw.com",
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Western Michigan University Cooley Law School"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Hope College"
+      }
+    ],
     "worksFor": {
       "@type": "LegalService",
       "name": "Sankofa Law Group",
-      "url": "https://www.sankofalawgroup.com/",
+      "url": "https://sankofalawgroup.com/",
       "telephone": "+1-808-927-1621",
       "address": {
         "@type": "PostalAddress",
@@ -225,6 +235,16 @@
     .attorney-hero__content p { color: rgba(245, 240, 230, 0.85); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; }
     .attorney-hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
 
+    /* Team Callout */
+    .team-callout {
+      background: var(--parchment-100);
+      border-top: 1px solid rgba(58, 58, 54, 0.1);
+      border-bottom: 1px solid rgba(58, 58, 54, 0.1);
+    }
+    .team-callout-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+
     /* Biography Section */
     .bio-section { background: var(--white); }
     .bio-grid { display: grid; grid-template-columns: 1fr; max-width: 52rem; margin: 0 auto; gap: 2rem; }
@@ -236,7 +256,7 @@
 
     /* Practice Focus */
     .practice-focus { background: var(--parchment-50); border-top: 1px solid rgba(58, 58, 54, 0.1); }
-    .focus-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+    .focus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
     .focus-card {
       padding: 2rem; background: var(--white); border-left: 4px solid var(--brass-500);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0; box-shadow: var(--shadow-sm);
@@ -246,9 +266,7 @@
 
     /* Contact Form */
     .contact-form-section {
-      background:
-        radial-gradient(circle at 10% 90%, rgba(176, 141, 87, 0.15), transparent 26rem),
-        var(--navy-900);
+      background: radial-gradient(circle at 10% 90%, rgba(176, 141, 87, 0.15), transparent 26rem), var(--navy-900);
       color: var(--parchment-100);
     }
     .contact-form-section h2 { color: var(--parchment-100); }
@@ -271,7 +289,7 @@
     .field input::placeholder, .field textarea::placeholder { color: #777770; }
     .form-consent { margin: 1rem 0 1.25rem; color: var(--charcoal-500); font-size: 0.77rem; line-height: 1.55; }
     .form-consent a { color: var(--navy-900); text-decoration: underline; text-underline-offset: 3px; }
-    .form-status { min-height: 1.5rem; margin: 0.85rem 0 0; color: var(--charcoal-500); font-size: 0.85rem; }
+    .form-status { min-height: 1.5rem; margin: 0.85rem 0 0; font-size: 0.85rem; font-weight: 500; }
 
     .contact-info-row {
       display: grid;
@@ -331,7 +349,6 @@
     @media (max-width: 850px) {
       .attorney-hero-grid { grid-template-columns: 1fr; }
       .attorney-hero__image { width: min(100%, 400px); margin: 0 auto 2rem; }
-      .focus-grid { grid-template-columns: 1fr; }
       .footer-main { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: 1 / -1; }
     }
@@ -345,6 +362,7 @@
       .form-grid { grid-template-columns: 1fr; }
       .footer-main { grid-template-columns: 1fr; }
       .footer-brand { grid-column: auto; }
+      .team-callout-inner { flex-direction: column; text-align: center; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -404,8 +422,9 @@
     <section class="attorney-hero" aria-labelledby="attorney-name">
       <div class="container attorney-hero-grid">
         <div class="attorney-hero__image">
+          <!-- Replace src with actual headshot path -->
           <img
-            src="images/linkedinheadshot.jpeg"
+            src="images/tiarra-thompson-headshot.jpg"
             alt="Tiarra Thompson, Partner Attorney at Sankofa Law Group"
             width="800"
             height="1000"
@@ -415,7 +434,7 @@
         <div class="attorney-hero__content">
           <span class="eyebrow" style="color: var(--brass-500);">Partner Attorney</span>
           <h1 id="attorney-name">Tiarra Thompson, Esq.</h1>
-          <span class="attorney-hero__title">Criminal Defense & Civil Litigation</span>
+          <span class="attorney-hero__title">Criminal Defense, Civil Litigation & Family Law</span>
           <p>
             Relentless advocacy. Strategic insight. Unwavering dedication to your future. 
             Tiarra Thompson champions the rights of individuals and businesses facing complex legal challenges, ensuring every client receives comprehensive, compassionate, and fierce representation.
@@ -444,6 +463,22 @@
       </div>
     </section>
 
+    <!-- Firm Leadership Callout -->
+    <section class="section team-callout" aria-labelledby="team-heading">
+      <div class="container team-callout-inner">
+        <div>
+          <span class="eyebrow">Sankofa Law Group</span>
+          <h3 id="team-heading" style="margin-bottom: 0.5rem;">Partnered with Javaron Buckley, Esq.</h3>
+          <p style="color: var(--charcoal-700); max-width: 600px; margin: 0;">
+            Tiarra Thompson works alongside founding attorney Javaron Buckley to provide comprehensive, high-stakes representation across Illinois. Explore our firm's full range of services and leadership.
+          </p>
+        </div>
+        <a href="https://sankofalawgroup.com/" class="btn btn--navy" target="_blank" rel="noopener noreferrer">
+          Meet Javaron Buckley & The Firm →
+        </a>
+      </div>
+    </section>
+
     <!-- Biography Section -->
     <section id="about" class="section bio-section" aria-labelledby="bio-heading">
       <div class="container">
@@ -453,10 +488,10 @@
         </div>
         <div class="bio-grid bio-text">
           <p>
-            Tiarra Thompson is a Partner Attorney at Sankofa Law Group, where she provides relentless, strategic representation for clients navigating complex civil litigation and criminal defense matters. With a deep commitment to justice and a meticulous approach to case preparation, Tiarra understands that legal challenges are not just matters of law, but deeply personal events that impact her clients' lives, livelihoods, and futures.
+            Tiarra Thompson is a Partner Attorney at Sankofa Law Group, where she provides relentless, strategic representation for clients navigating complex civil litigation, criminal defense, and family law matters. With a deep commitment to justice and a meticulous approach to case preparation, Tiarra understands that legal challenges are not just matters of law, but deeply personal events that impact her clients' lives, livelihoods, and futures.
           </p>
           <p>
-            She approaches every case with a dual focus: aggressive advocacy in the courtroom and compassionate, clear communication with her clients. Whether she is dissecting the nuances of a breach-of-contract dispute, protecting a client's rights during a criminal investigation, or negotiating a high-stakes settlement, Tiarra leaves no stone unturned.
+            She approaches every case with a dual focus: aggressive advocacy in the courtroom and compassionate, clear communication with her clients. Whether she is dissecting the nuances of a breach-of-contract dispute, protecting a client's rights during a criminal investigation, or guiding a family through a sensitive transition, Tiarra leaves no stone unturned.
           </p>
           <p>
             Guided by the Sankofa principle, Tiarra believes in thoroughly understanding the origins of a legal dispute to forge the strongest possible path forward. She is fiercely protective of her clients' rights and is dedicated to ensuring their voices are heard and their interests are vigorously defended.
@@ -485,6 +520,12 @@
               In civil matters, Tiarra evaluates the facts, legal options, and risks to develop a practical, results-driven path forward. She handles commercial disputes, breach-of-contract claims, and personal injury matters with a sharp analytical mind and a commitment to securing favorable outcomes.
             </p>
           </article>
+          <article class="focus-card" style="border-left-color: var(--navy-800);">
+            <h3>Family Law</h3>
+            <p>
+              Navigating family law requires both legal acumen and deep empathy. Tiarra advocates fiercely for her clients in matters involving custody, support, and divorce, ensuring their rights and their children's well-being are prioritized during highly sensitive transitions.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -499,23 +540,23 @@
         <div class="credentials-grid">
           <div class="credential-item">
             <strong>Bar Admission</strong>
-            <span>Illinois State Bar<br>[Year of Admission]</span>
+            <span>Illinois State Bar</span>
           </div>
           <div class="credential-item">
             <strong>Court Admissions</strong>
-            <span>U.S. District Court, Northern District of Illinois<br>[Any other specific courts]</span>
+            <span>Illinois State & Federal Courts</span>
           </div>
           <div class="credential-item">
             <strong>Legal Education</strong>
-            <span>Juris Doctor (J.D.)<br>[Law School Name], [Graduation Year]</span>
+            <span>Juris Doctor (J.D.)<br>Western Michigan University Cooley Law School</span>
           </div>
           <div class="credential-item">
             <strong>Undergraduate Education</strong>
-            <span>Bachelor of [Arts/Science] in [Major]<br>[University Name], [Graduation Year]</span>
+            <span>Bachelor's Degree in Business Administration & Management<br>Hope College</span>
           </div>
           <div class="credential-item">
             <strong>Professional Affiliations</strong>
-            <span>[e.g., Illinois State Bar Association]<br>[e.g., Chicago Bar Association]</span>
+            <span>Illinois State Bar Association<br>Chicago Bar Association</span>
           </div>
           <div class="credential-item">
             <strong>Office Location</strong>
@@ -547,12 +588,16 @@
             <a href="mailto:tiarra@tiarrathompsonlaw.com">tiarra@tiarrathompsonlaw.com</a>
           </div>
           <div class="contact-info-item">
+            <strong>Urgent Criminal Matters</strong>
+            <a href="tel:+18089271621">(808) 927-1621</a>
+          </div>
+          <div class="contact-info-item">
             <strong>Office</strong>
             <a href="https://www.google.com/maps/place/837+E+162nd+St+%232,+South+Holland,+IL+60473" target="_blank" rel="noopener noreferrer">South Holland, IL</a>
           </div>
         </div>
 
-        <!-- Formspree Contact Form -->
+        <!-- Contact Form -->
         <div class="contact-form-wrap">
           <h3>Request a Consultation</h3>
           <p>
@@ -590,6 +635,7 @@
                   <option value="">Select one</option>
                   <option value="criminal-defense">Criminal defense</option>
                   <option value="civil-litigation">Civil litigation</option>
+                  <option value="family-law">Family law</option>
                   <option value="other">Other / not sure</option>
                 </select>
               </div>
@@ -637,7 +683,7 @@
           </span>
         </a>
         <p>
-          Criminal defense and civil litigation representation guided by careful preparation,
+          Criminal defense, civil litigation, and family law representation guided by careful preparation,
           informed strategy, and respect for the people behind each legal matter.
         </p>
       </div>
@@ -647,7 +693,7 @@
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/#practice-areas">Practice Areas</a></li>
-          <li><a href="/#attorney">Our Attorneys</a></li>
+          <li><a href="https://sankofalawgroup.com/" target="_blank" rel="noopener noreferrer">Javaron Buckley, Esq.</a></li>
           <li><a href="/#testimonials">Client Results</a></li>
           <li><a href="/#contact">Contact the Firm</a></li>
         </ul>
@@ -703,6 +749,7 @@
   </footer>
 
   <script>
+    // Mobile Menu Toggle
     const menuToggle = document.querySelector(".menu-toggle");
     const mobileMenu = document.querySelector(".mobile-nav");
     const mobileLinks = mobileMenu.querySelectorAll("a");
@@ -731,7 +778,45 @@
       }
     });
 
+    // Dynamic Year
     document.getElementById("current-year").textContent = new Date().getFullYear();
+
+    // Form Submission Handler (Graceful Fallback for Formspree)
+    const form = document.getElementById("consultation-form");
+    const formStatus = document.getElementById("form-status");
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+        formStatus.textContent = "";
+
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: { Accept: "application/json" }
+          });
+
+          if (response.ok) {
+            form.reset();
+            formStatus.textContent = "Thank you. Your consultation request has been securely submitted. Tiarra or a team member will contact you shortly.";
+            formStatus.style.color = "var(--navy-900)";
+          } else {
+            throw new Error("Form submission failed");
+          }
+        } catch (error) {
+          formStatus.textContent = "There was an error submitting the form. Please call us directly at (708) 270-4954.";
+          formStatus.style.color = "var(--oxblood-600)";
+        } finally {
+          submitBtn.textContent = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
   </script>
 </body>
 </html>
